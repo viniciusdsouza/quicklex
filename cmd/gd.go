@@ -15,22 +15,28 @@ import (
 	"github.com/spf13/cobra"
 )
 
-var gdCmd = &cobra.Command{
-	Use:   "gd",
-	Short: "A brief description of your command",
-	Long: `A longer description that spans multiple lines and likely contains examples
-and usage of using your command. For example:
+var getCmd = &cobra.Command{
+	Use:   "get",
+	Short: "Retrieve word definitions",
+	Long: `	The "get" command is a command-line interface (CLI) command that allows users 
+	to retrieve the definitions of a given word directly from their terminal 
+	or command prompt. It provides a quick and convenient way to access the meaning, 
+	definitions, and sometimes additional information about a word without the need 
+	to open a browser or search through extensive dictionaries.
 
-Cobra is a CLI library for Go that empowers applications.
-This application is a tool to generate the needed files
-to quickly create a Cobra application.`,
+	Syntax:
+	ql get [word]
+
+	Parameters:
+	[word]: The word for which you want to retrieve the definitions. 
+	This parameter is required and should be replaced with the actual word you want to look up.`,
 	Run: func(cmd *cobra.Command, args []string) {
 		getAllDefinitions(args[0])
 	},
 }
 
 func init() {
-	rootCmd.AddCommand(gdCmd)
+	rootCmd.AddCommand(getCmd)
 }
 
 type WordDefinitions []struct {

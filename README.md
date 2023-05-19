@@ -8,17 +8,7 @@ The QuickLex CLI project is a command-line application that provides dictionary 
 
 ---
 
-## Features
-
-- Using Go-Gin as a router for route management
-- Implementing SQLite as the database for the API
-- Using GoORM for communication with the database
-- Integrating Swagger for API documentation and testing [🚧WIP]
-- Creating a modern package structure for organizing the project
-- Implementing a complete movie and tv shows rating API with endpoints for searching, creating, editing, and deleting movies and tv shows
-- Implementing automated tests to ensure API quality [🚧WIP]
-
-## Installation {#installation}
+## Installation
 
 To use this project, you need to follow these steps:
 

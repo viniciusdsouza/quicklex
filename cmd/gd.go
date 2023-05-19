@@ -60,15 +60,17 @@ func getAllDefinitions(word string) {
 		fmt.Println("Could not find this word!")
 		return
 	}
-	pterm.DefaultBasicText.Println("'" + pterm.LightMagenta(wordDefinitions[0].Word) + "'")
-	fmt.Printf("%v\n", wordDefinitions[0].Word)
-	fmt.Printf("1. %v - %v\n", wordDefinitions[0].Meanings[0].PartOfSpeech, wordDefinitions[0].Meanings[0].Definitions[0].Definition)
+	pterm.DefaultCenter.Println("\n'" + pterm.LightMagenta(wordDefinitions[0].Word) + "'")
+	pterm.DefaultCenter.Println("1. " + wordDefinitions[0].Meanings[0].PartOfSpeech + " - " + wordDefinitions[0].Meanings[0].Definitions[0].Definition)
 	if wordDefinitions[0].Meanings[0].Definitions[0].Example != "" {
-		fmt.Printf(" Ex: %v\n", wordDefinitions[0].Meanings[0].Definitions[0].Example)
+		pterm.DefaultCenter.Println(" Ex: " + wordDefinitions[0].Meanings[0].Definitions[0].Example + "\n")
 	}
-	fmt.Printf("2. %v - %v\n", wordDefinitions[0].Meanings[0].PartOfSpeech, wordDefinitions[0].Meanings[1].Definitions[0].Definition)
-	if wordDefinitions[0].Meanings[0].Definitions[0].Example != "" {
-		fmt.Printf(" Ex: %v\n", wordDefinitions[0].Meanings[1].Definitions[0].Example)
+	if 1 < len(wordDefinitions[0].Meanings) {
+		pterm.DefaultCenter.Println("\n2. " + wordDefinitions[0].Meanings[1].PartOfSpeech + " - " + wordDefinitions[0].Meanings[1].Definitions[0].Definition)
+		if wordDefinitions[0].Meanings[1].Definitions[0].Example != "" {
+			pterm.DefaultCenter.Println(" Ex: " + wordDefinitions[0].Meanings[1].Definitions[0].Example + "\n")
+		}
+		return
 	}
 }
 
